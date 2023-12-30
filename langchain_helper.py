@@ -18,14 +18,15 @@ def Gen_petnames(animal_type, pet_color, number_of_names, name_type):
         # prompt template
     )
 
-    name_chain = LLMChain(llm=llm, prompt=prompt_template_names)  # LLMChain is used to connect LLM's and prompts here
+    name_chain = LLMChain(llm=llm, prompt=prompt_template_names,
+                          output_key="Pet_names")  # LLMChain is used to connect LLM's and prompts here
     # name = llm("I want 5 Dog names, It must be cool and catchy.") #Passed simple string into the LLM
     response = name_chain(
-        {'animal_type': animal_type, 'pet_color': pet_color}
+        {'animal_type': animal_type, 'pet_color': pet_color, }
     )  # response is being stored in a dictionary
 
     return response
 
-
-if __name__ == "__main__":
-    print(Gen_petnames("cow", "brown", 4, 'cute'))
+#
+# if __name__ == "__main__":
+#     print(Gen_petnames("cow", "brown", 4, 'cute'))
