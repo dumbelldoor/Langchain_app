@@ -3,7 +3,6 @@ import streamlit as stl
 
 stl.title("Pet Name Generator")
 
-
 animal_type = stl.sidebar.selectbox("What is your Pet type:",
                                     ("Cat", "Dog", "Cow", "Sheep", " Piglet"))
 
@@ -18,11 +17,8 @@ if animal_type == 'Sheep':
 if animal_type == 'Piglet':
     pet_color = stl.sidebar.text_area(label="What is the color of your Piglet:", max_chars=15)
 
-
-
-
 number_of_pet = stl.sidebar.selectbox("Enter the number of pet names you want:", ("1", "2", " 3", "4", "5", "6"))
 name_type = stl.sidebar.selectbox("What Kind of name you want:", ("Cute", "Cool", "Sassy", "Strong"))
 if pet_color:
-    response = lch.Gen_petnames(animal_type, pet_color, number_of_pet,name_type)
+    response = lch.Gen_petnames(animal_type, pet_color, number_of_pet, name_type)
     stl.text(response)

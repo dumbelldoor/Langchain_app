@@ -6,7 +6,7 @@ import os
 
 """ API key Generated """
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = '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'
 
 
 def Gen_petnames(animal_type, pet_color, number_of_names, name_type):
